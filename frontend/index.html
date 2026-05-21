@@ -1,0 +1,361 @@
+<!DOCTYPE html><html class="scroll-smooth dark" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nawab Kebab &amp; Tacos - Midnight Bazaar Edition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.png" type="image/png">
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {background: "#fdf9f4", "on-background": "#1c1c19", primary: "#130803", secondary: "#a13f1f", surface: "#fdf9f4", "surface-variant": "#e6e2dd", outline: "#80756f", "outline-variant": "#d2c4bd", "on-surface": "#1c1c19", "on-surface-variant": "#4e4540", "on-primary": "#ffffff", "on-secondary": "#ffffff", "surface-bright": "#fdf9f4", tertiary: "#000e03", "surface-container-high": "#ebe8e3", "on-primary-fixed-variant": "#54433a", "primary-fixed": "#f7ddd0", "error-container": "#ffdad6", "on-primary-fixed": "#261911", "on-error-container": "#93000a", "surface-container": "#f1ede8", "on-secondary-fixed-variant": "#812809", "on-tertiary-fixed-variant": "#2e4e35", "surface-container-low": "#f7f3ee", "secondary-fixed-dim": "#ffb59f", error: "#ba1a1a", "tertiary-container": "#072711", "secondary-fixed": "#ffdbd0", "tertiary-fixed-dim": "#abd0af", "inverse-primary": "#dac2b5", "primary-container": "#2c1e16", "surface-dim": "#ddd9d5", "inverse-on-surface": "#f4f0eb", "on-secondary-fixed": "#3a0a00", "on-tertiary": "#ffffff", "on-tertiary-container": "#6f9173", "secondary-container": "#fc845e", "surface-container-highest": "#e6e2dd", "primary-fixed-dim": "#dac2b5", "tertiary-fixed": "#c7ecca", "on-tertiary-fixed": "#02210c", "on-primary-container": "#9a8479", "on-secondary-container": "#711d00", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "surface-tint": "#6d5a50", "inverse-surface": "#31302d"}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}, spacing: {"margin-mobile": "20px", "section-gap": "80px", "margin-desktop": "64px", unit: "8px", gutter: "24px"}, fontFamily: {"headline-xl-mobile": ["Playfair Display"], "body-md": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Playfair Display"], "label-md": ["Inter"], "headline-xl": ["Playfair Display"], "headline-md": ["Playfair Display"], headline: ["Playfair Display"], display: ["Playfair Display"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-xl-mobile": ["36px", {lineHeight: "1.1", fontWeight: "700"}], "body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "1.6", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "1.2", fontWeight: "600"}], "label-md": ["14px", {lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600"}], "headline-xl": ["48px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700"}], "headline-md": ["24px", {lineHeight: "1.3", fontWeight: "600"}]}}}};</script>
+<style>
+        /* Grain Texture Overlay adjusted for dark mode */
+        .texture-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+            opacity: 0.6;
+            mix-blend-mode: overlay;
+        }
+
+        /* Dotted Leader for Menu */
+        .menu-leader {
+            flex-grow: 1;
+            border-bottom: 2px dotted #D4AF37;
+            margin: 0 10px;
+            position: relative;
+            top: -6px;
+            opacity: 0.2;
+        }
+
+        /* Strikethrough style */
+        .strike-through {
+            position: relative;
+            display: inline-block;
+        }
+        .strike-through::after {
+            content: '';
+            position: absolute;
+            left: -5%;
+            top: 50%;
+            width: 110%;
+            height: 2px;
+            background-color: #8B0000;
+            transform: rotate(-5deg);
+        }
+
+        /* Handwritten font simulation */
+        .handwritten {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #D4AF37;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Organic border lines */
+        .organic-border-bottom {
+            border-bottom: 1px solid #D4AF37;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .organic-border {
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 4px 8px 3px 6px;
+        }
+
+        /* Global color transition for theme toggle */
+        *, *::before, *::after {
+            transition-property: background-color, border-color, color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 500ms;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background dark:bg-[#1f1a17] text-on-background dark:text-[#f4f0eb] font-body-md antialiased relative">
+<!-- Texture Overlay -->
+<div class="texture-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-auto animate-in fade-in slide-in-from-top-4 duration-700 group cursor-pointer">
+<div class="flex items-center px-6 py-3 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl ring-1 ring-white/5 bg-[#2c1e16]/80 overflow-hidden transition-all duration-500 ease-in-out max-w-[130px] group-hover:max-w-[800px]">
+<div class="flex items-center gap-2 shrink-0">
+<span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: &quot;FILL&quot; 1;">restaurant</span>
+<span class="font-headline-md text-base text-white tracking-tight whitespace-nowrap">Nawab</span>
+</div>
+<div class="flex items-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 whitespace-nowrap shrink-0 ml-6">
+<nav class="hidden md:flex items-center gap-4 border-l border-white/10 pl-4">
+<a class="text-white/70 hover:text-white font-label-md text-xs uppercase tracking-widest transition-colors" href="#hero">Inicio</a>
+<a class="text-white/70 hover:text-white font-label-md text-xs uppercase tracking-widest transition-colors" href="#menu">Menú</a>
+<a class="text-white/70 hover:text-white font-label-md text-xs uppercase tracking-widest transition-colors" href="#locations">Locales</a>
+</nav>
+<div class="flex items-center gap-3 pl-2 md:pl-0">
+<button aria-label="Toggle Dark Mode" class="text-white/70 hover:text-white transition-colors flex items-center justify-center w-8 h-8 rounded-full hover:bg-white/10" id="theme-toggle">
+<span class="material-symbols-outlined text-[18px]">light_mode</span>
+</button>
+<button class="bg-secondary text-white font-label-md text-xs px-4 py-1.5 rounded-full hover:brightness-110 transition-all uppercase tracking-tighter">
+            Order
+        </button>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- 1. Hero Section -->
+<section class="relative min-h-[795px] flex flex-col items-center justify-center pt-section-gap pb-8 px-margin-mobile md:px-margin-desktop overflow-hidden" id="hero" style="min-height: auto; 100vh; padding-bottom: 4rem;">
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+<img alt="Hero background" class="w-full h-full object-cover grayscale invert" src="https://lh3.googleusercontent.com/aida/ADBb0ui2cwS7oj5sKeUxN-FWUVtowfEqfWHfF0GBUcV8uKQXZlO87OU3nAT6MnYMbGyWzmjSlc8313pvxbQd_NPYoQZ5J7yu6yqXA2znSyf7w4LZDoPi3AC3o_FpTKueCaAeMIscq2mQvxMRgi_x9D6ApGEqDi5AzyD6ysdz1N_p27I5hDmiqLF9TLe0SIkmo_ebaI2VBC7aiLa0cLE-mSYtDfGiFY9Dqxjyqj9MSx97VnWHnsCXnTCLSTXyRkg">
+</div>
+<div class="relative z-10 text-center max-w-3xl mx-auto flex flex-col items-center">
+<!-- Main Image -->
+<div class="w-64 h-80 md:w-96 md:h-[30rem] mb-8 organic-border p-2 bg-surface dark:bg-[#2c2420] rotate-2 transform transition-transform hover:rotate-0 duration-500 scale-110 mt-14">
+<img alt="French Taco with fries and meat" class="w-full h-full object-cover rounded-sm filter contrast-125" src="https://lh3.googleusercontent.com/aida/ADBb0ugRsySzZoqpYDpP7HGISOrCIc1sbmcBeqKKjR4-Xki1ftWi1Padz8PZNfuAbDLk7CmIn9KijFzb5t02L8dDoiMYTZNG-9skttXo4NZos1TLPCYgAJNpsMlqoCbl7NabguEXDno7291bGhHEdIOfrLTtJcy3Dp-7niRZ1m1JLMOl5YnCbW_bCGoYe7SeYkEhvN4vQ-wlIn-eAqVyRLvt044fZyZjMBydyE6lAludBG0e_-UAxl_RMCB10arxXEttLGB9miKWwZbA8EY">
+</div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-4 text-primary dark:text-[#dac2b5]">
+                El <span class="strike-through">Sabor</span> <br class="md:hidden"> <span class="handwritten text-4xl md:text-6xl -ml-2">Alma</span> del Nawab
+            </h1>
+<p class="font-body-lg text-body-lg max-w-xl mx-auto mb-8 text-on-background/80 dark:text-[#f4f0eb]/80">
+                Herencia culinaria en cada bocado. Una fusión callejera de tradiciones.
+            </p><a class="inline-block bg-[#C75B39] text-white font-label-md text-label-md px-10 py-4 rounded tracking-widest hover:brightness-110 transition-all shadow-xl relative z-20 font-bold mt-8" href="#menu">
+                VER MENÚ
+            </a>
+</div>
+</section>
+<!-- 2. Locations Section -->
+<section class="relative z-20 py-12 px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto mt-12" id="locations">
+<div class="bg-surface/90 dark:bg-[#2c2420]/90 backdrop-blur-sm border border-primary/20 dark:border-[#dac2b5]/20 shadow-xl p-8 md:p-12 relative overflow-hidden">
+<!-- Subtle corner accents -->
+<div class="absolute top-0 left-0 w-3 h-3 border-t border-l border-primary/40 m-2"></div>
+<div class="absolute top-0 right-0 w-3 h-3 border-t border-r border-primary/40 m-2"></div>
+<div class="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-primary/40 m-2"></div>
+<div class="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-primary/40 m-2"></div>
+<div class="text-center mb-10">
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-[#dac2b5] italic">Nuestras Casas</h2>
+<div class="w-12 h-px bg-primary/40 mx-auto mt-4"></div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 md:gap-12 justify-center items-center md:items-start text-center">
+<!-- Card 1 -->
+<div class="flex-1 w-full max-w-xs">
+<h3 class="font-headline-md text-headline-md mb-3 text-primary dark:text-[#dac2b5]">Legazpi</h3>
+<p class="font-body-md text-body-md mb-1 text-on-background/80 dark:text-[#f4f0eb]/80">Calle de Legazpi 42, Madrid</p>
+<p class="font-body-md text-body-md text-on-background/60 dark:text-[#f4f0eb]/60">+34 912 345 678</p>
+</div>
+<!-- Divider -->
+<div class="hidden md:block w-px h-24 bg-primary/10"></div>
+<div class="md:hidden w-24 h-px bg-primary/10"></div>
+<!-- Card 2 -->
+<div class="flex-1 w-full max-w-xs">
+<h3 class="font-headline-md text-headline-md mb-3 text-primary dark:text-[#dac2b5]">Zumarraga</h3>
+<p class="font-body-md text-body-md mb-1 text-on-background/80 dark:text-[#f4f0eb]/80">Plaza Zumarraga 7, Madrid</p>
+<p class="font-body-md text-body-md text-on-background/60 dark:text-[#f4f0eb]/60">+34 918 765 432</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Most Popular -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg inline-block organic-border-bottom pb-2 text-primary dark:text-[#dac2b5]">
+                Los Más Aclamados
+            </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<!-- Item 1 -->
+<div class="md:col-span-5 md:col-start-2">
+<div class="organic-border p-2 bg-surface dark:bg-[#2c2420] -rotate-2 border-primary/20 dark:border-[#dac2b5]/20">
+<div class="h-64 md:h-80 w-full bg-background dark:bg-[#1f1a17] relative overflow-hidden flex items-center justify-center">
+<span class="text-primary dark:text-[#dac2b5]/30 font-label-md tracking-widest">[Imagen: Tacos XL]</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 md:col-start-8 flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md mb-2 text-primary dark:text-[#dac2b5]">Tacos XL</h3>
+<p class="font-body-md text-body-md text-on-background/80 dark:text-[#f4f0eb]/80 mb-4">Doble tortilla, extra carne marinada 24h, pico de gallo rústico y nuestra salsa secreta de yogur.</p>
+</div>
+<!-- Item 2 -->
+<div class="md:col-span-4 md:col-start-2 flex flex-col justify-center md:text-right order-last md:order-none mt-12 md:mt-0">
+<h3 class="font-headline-md text-headline-md mb-2 text-primary dark:text-[#dac2b5]">Cheese Naan Kebab</h3>
+<p class="font-body-md text-body-md text-on-background/80 dark:text-[#f4f0eb]/80 mb-4">El clásico reinventado. Pan naan recién horneado relleno de queso fundido, abrazando finas tiras de ternera especiada.</p>
+</div>
+<div class="md:col-span-5 md:col-start-7 mt-12 md:mt-0 order-first md:order-none">
+<div class="organic-border p-2 bg-surface dark:bg-[#2c2420] rotate-1 border-primary/20 dark:border-[#dac2b5]/20">
+<div class="h-64 md:h-80 w-full bg-background dark:bg-[#1f1a17] relative overflow-hidden flex items-center justify-center">
+<span class="text-primary dark:text-[#dac2b5]/30 font-label-md tracking-widest">[Imagen: Cheese Naan Kebab]</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Menu (Editorial Style) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface dark:bg-[#251e1b] border-t border-primary/20 dark:border-[#dac2b5]/20" id="menu">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-4 text-primary dark:text-[#dac2b5]">El Menú</h2>
+<div class="w-24 h-px bg-primary/40 mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+<!-- Category 1 -->
+<div>
+<h3 class="font-headline-md text-headline-md mb-6 text-primary dark:text-[#dac2b5] italic">Tacos Franceses</h3>
+<ul class="space-y-4">
+<li class="flex items-baseline">
+<span class="font-body-lg text-body-lg font-semibold text-on-background dark:text-[#f4f0eb]">Taco Clásico</span>
+<div class="menu-leader"></div>
+<span class="font-body-lg text-body-lg text-primary dark:text-[#dac2b5]">8.50€</span>
+</li>
+<li class="flex items-baseline">
+<span class="font-body-lg text-body-lg font-semibold text-on-background dark:text-[#f4f0eb]">Taco Cordon Bleu</span>
+<div class="menu-leader"></div>
+<span class="font-body-lg text-body-lg text-primary dark:text-[#dac2b5]">9.50€</span>
+</li>
+<li class="flex items-baseline">
+<span class="font-body-lg text-body-lg font-semibold text-on-background dark:text-[#f4f0eb]">Taco Nawab Especial</span>
+<div class="menu-leader"></div>
+<span class="font-body-lg text-body-lg text-primary dark:text-[#dac2b5]">11.00€</span>
+</li>
+</ul>
+</div>
+<!-- Category 2 -->
+<div>
+<h3 class="font-headline-md text-headline-md mb-6 text-primary dark:text-[#dac2b5] italic">Kebabs &amp; Sandwiches</h3>
+<ul class="space-y-4">
+<li class="flex items-baseline">
+<span class="font-body-lg text-body-lg font-semibold text-on-background dark:text-[#f4f0eb]">Doner Ternera</span>
+<div class="menu-leader"></div>
+<span class="font-body-lg text-body-lg text-primary dark:text-[#dac2b5]">6.50€</span>
+</li>
+<li class="flex items-baseline">
+<span class="font-body-lg text-body-lg font-semibold text-on-background dark:text-[#f4f0eb]">Durum Mixto</span>
+<div class="menu-leader"></div>
+<span class="font-body-lg text-body-lg text-primary dark:text-[#dac2b5]">7.50€</span>
+</li>
+<li class="flex items-baseline">
+<span class="font-body-lg text-body-lg font-semibold text-on-background dark:text-[#f4f0eb]">Sandwich Kefta</span>
+<div class="menu-leader"></div>
+<span class="font-body-lg text-body-lg text-primary dark:text-[#dac2b5]">7.00€</span>
+</li>
+</ul>
+</div>
+<!-- Category 3 -->
+<div>
+<h3 class="font-headline-md text-headline-md mb-6 text-primary dark:text-[#dac2b5] italic">Cheese Naan</h3>
+<ul class="space-y-4">
+<li class="flex items-baseline">
+<span class="font-body-lg text-body-lg font-semibold text-on-background dark:text-[#f4f0eb]">Naan Solo Queso</span>
+<div class="menu-leader"></div>
+<span class="font-body-lg text-body-lg text-primary dark:text-[#dac2b5]">4.00€</span>
+</li>
+<li class="flex items-baseline">
+<span class="font-body-lg text-body-lg font-semibold text-on-background dark:text-[#f4f0eb]">Naan con Pollo Tikka</span>
+<div class="menu-leader"></div>
+<span class="font-body-lg text-body-lg text-primary dark:text-[#dac2b5]">8.50€</span>
+</li>
+</ul>
+</div>
+<!-- Category 4 -->
+<div>
+<h3 class="font-headline-md text-headline-md mb-6 text-primary dark:text-[#dac2b5] italic">Para Compartir</h3>
+<ul class="space-y-4">
+<li class="flex items-baseline">
+<span class="font-body-lg text-body-lg font-semibold text-on-background dark:text-[#f4f0eb]">Patatas Nawab</span>
+<div class="menu-leader"></div>
+<span class="font-body-lg text-body-lg text-primary dark:text-[#dac2b5]">4.50€</span>
+</li>
+<li class="flex items-baseline">
+<span class="font-body-lg text-body-lg font-semibold text-on-background dark:text-[#f4f0eb]">Alitas Tandoori (6uds)</span>
+<div class="menu-leader"></div>
+<span class="font-body-lg text-body-lg text-primary dark:text-[#dac2b5]">6.00€</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-16 text-center">
+<p class="font-body-md text-body-md text-on-background/50 dark:text-[#f4f0eb]/50 italic">* Opciones vegetarianas disponibles. Pregunta a nuestro equipo.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-[#1f1a17] w-full border-t border-primary/20 dark:border-[#dac2b5]/20 flex flex-col px-margin-mobile md:px-margin-desktop py-12 max-w-7xl mx-auto gap-10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 w-full">
+<div class="font-headline-md text-headline-md text-primary dark:text-[#dac2b5] mb-4 md:mb-0">
+        Nawab Kebab &amp; Tacos
+    </div>
+<nav class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+<a class="text-on-background/70 font-body-md text-body-md hover:text-primary dark:text-[#dac2b5] transition-colors" href="#">Our Story</a>
+<a class="text-on-background/70 font-body-md text-body-md hover:text-primary dark:text-[#dac2b5] transition-colors" href="#menu">Menu</a>
+<a class="text-on-background/70 font-body-md text-body-md hover:text-primary dark:text-[#dac2b5] transition-colors" href="#locations">Locations</a>
+<a class="text-on-background/70 font-body-md text-body-md hover:text-primary dark:text-[#dac2b5] transition-colors" href="#">Privacy</a>
+</nav>
+<div class="text-on-background/50 dark:text-[#f4f0eb]/50 font-body-md text-body-md text-center md:text-right">
+        © 2024 Nawab Kebab &amp; Tacos.<br>
+<span class="text-primary dark:text-[#dac2b5]/60 italic">Crafted with Heritage.</span>
+</div>
+</div>
+
+<div class="flex justify-center w-full pt-4 border-t border-primary/10 dark:border-[#dac2b5]/10">
+<!-- Componente: Botón de Autor (Premium Glassmorphism) -->
+<a href="https://www.instagram.com/jakesroodriguez" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="inline-flex items-center gap-3 px-5 py-2.5 bg-[#130803]/5 dark:bg-white/5 border border-[#130803]/10 dark:border-white/10 rounded-full text-on-background/60 dark:text-zinc-400 hover:text-primary dark:hover:text-white hover:bg-[#130803]/10 dark:hover:bg-white/10 transition-all duration-500 group hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] active:scale-95 backdrop-blur-md">
+  
+  <!-- Burbuja del Icono -->
+  <div class="p-2 bg-[#130803]/10 dark:bg-white/10 rounded-full group-hover:bg-[#130803]/20 dark:group-hover:bg-white/20 transition-colors flex items-center justify-center">
+    <!-- NOTA: Requiere cargar Material Symbols. Si no los usas, pon aquí una etiqueta <svg> -->
+    <span class="material-symbols-outlined text-sm group-hover:rotate-[15deg] group-hover:scale-110 transition-all duration-300">
+      code
+    </span>
+  </div>
+  
+  <!-- Contenedor de Textos -->
+  <div class="flex flex-col items-start text-left font-sans">
+    <span class="text-[9px] uppercase tracking-[0.2em] opacity-60 font-medium mb-0.5">
+      Designed & Built by
+    </span>
+    <span class="text-sm font-bold tracking-wider">
+      @jakesroodriguez
+    </span>
+  </div>
+  
+</a>
+</div>
+</footer>
+<script>
+    // Theme toggle logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    
+    if (themeToggleBtn) {
+        const icon = themeToggleBtn.querySelector('span');
+        
+        // Inicializar el icono correcto al cargar la página
+        if (htmlEl.classList.contains('dark')) {
+            icon.textContent = 'light_mode'; // En dark mode mostrar Sol para cambiar a claro
+        } else {
+            icon.textContent = 'dark_mode'; // En light mode mostrar Luna para cambiar a dark
+        }
+
+        themeToggleBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Evitar comportamientos no deseados al estar en un contenedor hover
+            
+            htmlEl.classList.toggle('dark');
+            if (htmlEl.classList.contains('dark')) {
+                icon.textContent = 'light_mode';
+            } else {
+                icon.textContent = 'dark_mode';
+            }
+        });
+    }
+</script>
+</body></html>
